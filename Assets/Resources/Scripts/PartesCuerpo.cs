@@ -22,9 +22,31 @@ public class PartesCuerpo : MonoBehaviour
     }
     void ActualizaTransformacion()
     {
+        float verticalValue = Input.GetAxisRaw("Vertical");
+        float horizontalValue = Input.GetAxisRaw("Horizontal");
+        Vector3 vectorTeclado = Vector3.zero;
+        Vector3 posicionCuerpo;
         op = objAnterior.GetComponent<Cabeza>().posicionAnterior;
-        this.transform.position = objAnterior.GetComponent<Cabeza>().posicionAnterior;
-        this.transform.eulerAngles = objAnterior.GetComponent<Cabeza>().rotacionAnterior;
-		this.distancia.distance = 20;
+        if (verticalValue < 0 || verticalValue > 0)
+        {
+            posicionCuerpo = (objAnterior.GetComponent<Cabeza>().posicionAnterior) - new Vector3(0, 1, 0);
+            this.transform.position = posicionCuerpo;
+            this.transform.eulerAngles = objAnterior.GetComponent<Cabeza>().rotacionAnterior;
+        }
+        else
+        {
+            if (horizontalValue < 0 || horizontalValue > 0)
+            {
+                posicionCuerpo = (objAnterior.GetComponent<Cabeza>().posicionAnterior) - new Vector3(0, 0, 1);
+                this.transform.position = posicionCuerpo;
+                this.transform.eulerAngles = objAnterior.GetComponent<Cabeza>().rotacionAnterior;
+            }
+            else
+            {
+                this.transform.position = (objAnterior.GetComponent<Cabeza>().posicionAnterior)-new Vector3(0, 1, 0);
+            }
+        }
+        
+ 
     }
 }
