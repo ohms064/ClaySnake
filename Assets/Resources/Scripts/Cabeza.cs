@@ -69,7 +69,23 @@ public class Cabeza : MonoBehaviour
             this.transform.eulerAngles += new Vector3(0f, 0f, angulo * (cross.z < 0 ? -1 : 1));
         }
     }
-    
+
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.collider.CompareTag("Player"))
+        {
+            gameObject.transform.position = new Vector3(0, 0, 0);
+        }
+        else if (c.collider.CompareTag("Pared"))
+        {
+            gameObject.transform.position = new Vector3(0, 0, 0);
+        }
+        else if (c.collider.CompareTag("Comida"))
+        {
+
+        }
+    }
+
 }
 
 
