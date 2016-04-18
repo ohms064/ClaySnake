@@ -15,14 +15,14 @@ public class Comida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
         Vector3 posicion = new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 5.0f));
         Instantiate(esfcomida, posicion, Quaternion.identity);
         Destroy(objeto);
         Destroy(this.gameObject);
     }
-
-    /*void OnTriggerEnter(Collider other)
-    {
-        Destroy(other.gameObject);
-    }*/
 }
