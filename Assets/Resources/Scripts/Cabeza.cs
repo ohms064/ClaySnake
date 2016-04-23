@@ -8,7 +8,6 @@ public class Cabeza : MonoBehaviour
     public float limiteTiempoMovimiento = 1f;   //Tiempo movimiento
     public Vector3 posicionAnterior;
     public Vector3 rotacionAnterior;
-	public Joint2D union;
     //
     private Vector3 vectorRotacionAux;
     private float contadorTiempo;               //Axuliliar paraeltiempo de movimiento
@@ -56,11 +55,11 @@ public class Cabeza : MonoBehaviour
         return vectorTeclado;
     }
     //
-    void GeneraRotacion( Vector3 vectorAux )
+    void GeneraRotacion(Vector3 vectorAux)
     {
         if (vectorAux.Equals(Vector3.zero))
             return;
-        float dot = Vector3.Dot(this.transform.up,vectorAux);
+        float dot = Vector3.Dot(this.transform.up, vectorAux);
         if (dot < 0.05 && dot > -0.05)
         {
             Vector3 cross = Vector3.Cross(this.transform.up, vectorAux);
@@ -69,7 +68,7 @@ public class Cabeza : MonoBehaviour
             this.transform.eulerAngles += new Vector3(0f, 0f, angulo * (cross.z < 0 ? -1 : 1));
         }
     }
-    
+
 }
 
 
