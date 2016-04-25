@@ -24,12 +24,15 @@ public class PartesCuerpo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalValue = Input.GetAxisRaw("Vertical");
-        horizontalValue = Input.GetAxisRaw("Horizontal");
+        verticalValue = Input.GetAxisRaw("Vertical"); // INPUT: Aquí recibes el Input y éste tendrá el valor de 1 mientras la tecla esté presionada
+        horizontalValue = Input.GetAxisRaw("Horizontal"); // INPUT: recuerda que esto sucede durante un frame del juego.
+        //Es más, aquí no nos interesa el valor del Axis, sólo queremos saber si se presionó la tecla y ya hay funciones del Input que devuelven un booleano con esta información
         contadorTiempo += Time.deltaTime;
         if (contadorTiempo >= limiteTiempoMovimiento)
         {
             GenerarMovimiento();
+            // Recuerda los operadores booleanos, los siguientes if's quedan mejor con un OR. Está el detalle que ambos sean ciertos, esto último mejor no lo consideres.
+            // Como consejo, si dos o más if's tienen exactamente las mismas sentencias entre las llaves {} lo más probable es que necesites un OR.
             if (verticalValue != 0)
             {
                 StartCoroutine("AlcanzarSiguiente");
@@ -66,15 +69,15 @@ public class PartesCuerpo : MonoBehaviour
     {
         Vector3 posicionCuerpo;
         posicionCuerpo = (objAnterior.GetComponent<Cabeza>().posicionAnterior); 
-        if (verticalValue != 0)
-        {
+        if (verticalValue != 0) // INPUT: Recuerda que para este punto esta condición ya se cumplió ya que para crear la corrutina ya se preguntó si el Axis vale 1,
+        { //INPUT: cuando preguntas aquí lo más probable es que el jugador ya no tenga presionada la tecla. Lo mismo aplica para el siguiente if.
             this.transform.eulerAngles = objAnterior.GetComponent<Cabeza>().rotacionAnterior;
             print(objAnterior.GetComponent<Cabeza>().posicionAnterior);
             print(this.transform.position);
         }
         else
         {
-            if (horizontalValue < 0 || horizontalValue > 0)
+            if (horizontalValue < 0 || horizontalValue > 0) // Recuerda que es mejor usar la diferencia !=
             {
                 this.transform.eulerAngles = objAnterior.GetComponent<Cabeza>().rotacionAnterior;
                 print(objAnterior.GetComponent<Cabeza>().posicionAnterior);
