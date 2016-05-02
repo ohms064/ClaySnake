@@ -59,6 +59,22 @@ public class Cabeza : ACuerpo {
         siguienteParte.InicioGiro( transAnterior );
     }
 
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.collider.CompareTag("Player"))
+        {
+            gameObject.transform.position = new Vector3(0, 0, 0);
+        }
+        else if (c.collider.CompareTag("Pared"))
+        {
+            gameObject.transform.position = new Vector3(0, 0, 0);
+        }
+        else if (c.collider.CompareTag("Comida"))
+        {
+
+        }
+    }
+
     public override void GenerarMovimiento() {
         throw new NotImplementedException();
     }
