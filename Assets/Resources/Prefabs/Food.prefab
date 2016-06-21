@@ -11,8 +11,8 @@ GameObject:
   - 33: {fileID: 3331482}
   - 135: {fileID: 13559798}
   - 23: {fileID: 2340918}
-  - 114: {fileID: 11409112}
   - 54: {fileID: 5481238}
+  - 114: {fileID: 11424864}
   m_Layer: 0
   m_Name: Food
   m_TagString: Untagged
@@ -80,7 +80,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11409112
+--- !u!114 &11424864
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871cae7804ef48c469bd42ef497a9ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  esfcomida: {fileID: 0}
+  esfcomida: {fileID: 156126}
 --- !u!135 &13559798
 SphereCollider:
   m_ObjectHideFlags: 1

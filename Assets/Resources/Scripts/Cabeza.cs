@@ -9,6 +9,9 @@ public class Cabeza : ACuerpo {
     //
     private Vector3 vectorRotacionAux;
     private Transform transformAnterior;
+    //
+    public GameObject cuerpo;
+    private Vector3 cuerponuevo;
     // Use this for initialization
     void Start() {
         vectorRotacionAux = Vector3.zero;
@@ -71,7 +74,8 @@ public class Cabeza : ACuerpo {
         }
         else if (c.collider.CompareTag("Comida"))
         {
-
+            //Vector3 cuerponuevo = new Vector3(2, 0, 2);
+            //Instantiate(cuerpo, cuerponuevo, Quaternion.identity);
         }
     }
 

@@ -85,6 +85,52 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &299814161
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 408894, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 156126, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+      propertyPath: m_TagString
+      value: Comida
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ef283e06bbe27004cb9549e4eaa35c22, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &369955230
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,8 +749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   siguienteParte: {fileID: 1774586381}
-  movimiento: 0.5
+  movimiento: 0
   limiteTiempoMovimiento: 1
+  cuerpo: {fileID: 0}
 --- !u!23 &1810554051
 MeshRenderer:
   m_ObjectHideFlags: 0
